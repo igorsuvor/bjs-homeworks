@@ -22,21 +22,25 @@ function getResult(a,b,c) {
 }
 
 function getAverageMark(marks) {
-    
-    // let quantityEstimation = (marks.lenght);
-     
-    // if (quantityEstimation == undefined) {
-    //   return 0;
-    // } 
-    
-    if (marks.lenght == []) {
-       return 0;
-     } 
-    else if (marks.lenght > 5) {
-        return 'Оценок больше 5!';
-      } 
+  let marksLength = Object.keys(marks).length;
 
-    //return averageMark;
+    let sum = 0;
+    for(let i = 0; i < marks.length; i++) {
+      sum += marks[i];
+    }
+
+    if (marksLength == 0) {
+      return 0;
+    } 
+    
+    else if (marksLength <= 5) {
+      return sum / marks.length;
+    } 
+    
+    else if (marksLength > 5) {
+      marks.splice(5, 5);
+        return sum / marks.length + ' Оценок больше 5!';
+      } 
 }
 
 function askDrink(name,dateOfBirthday){
