@@ -35,31 +35,18 @@ function showSolutionsMessage(a, b, c) {
 }
 
 
-function getAverageScore(data) {
-  data = {
-    algebra : [],
-    geometry : [],
-    russian : [],
-    physics : [],
-    music : [],
-    english : [],
-    poetry : [],
-    chemistry : [],
-    french : [] 
-  };
-
-// average: 3.6944444444444446
-
+function getAverageScore(...data) {
+ 
   function getAverageMark(marks) {
-      
-    if (marks.length == 0) {
-      return 0;
-    }
-  
-    let sum = 0;
-      for(let i = 0; i < marks.length; i++) {
-        sum += marks[i];
+    marks = data[i];
+      if (marks.length == 0) {
+        return 0;
       }
-    return sum / marks.length;
+  
+      let sum = 0;
+        for(let i = 0; i < marks.length; i++) {
+          sum += marks[i];
+      }
+      return sum / marks.length;
   }
 }
